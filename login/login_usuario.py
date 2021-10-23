@@ -8,12 +8,14 @@ def obtener_usuario_claves():
     print(datos)
 
 def levantar_validacion(mensaje):
+    #popup
     ventana_validacion = Toplevel(ventana)
     ventana_validacion.title("Validación")
     ventana_validacion.geometry("257x28")
     ventana_validacion.config(bg="#574236")
     ventana_validacion.resizable(0,0)
     ventana_validacion.iconbitmap("internautas.ico")
+    #label
     texto = Label(ventana_validacion,text=mensaje,fg="white")
     texto.config(bg="#574236")
     texto.place(x=5,y=2)
