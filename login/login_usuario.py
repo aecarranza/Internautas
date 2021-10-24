@@ -4,7 +4,7 @@ X_LABEL, X_ENTRYBOX, Y_USUARIO, Y_CLAVE = 12, 110, 11, 41
 COLOR_VENTANA, COLOR_FRAME, COLOR_FUENTE = "#574236", "#C3581B", "white"
 
 def obtener_datos():
-    datos = {"Richard":"1", "Francisco":"2", "Ezequiel":"3", "Rocio":"4", "Jaime":"5", "Nicolas":"6"}
+    datos = {"Richard":"1", "Francisco":"2", "Ezequiel":"3", "Rocio":"4", "Jaime":"5"}
     return datos
 
 def levantar_validacion(mensaje):
@@ -27,17 +27,17 @@ def validar_datos():
         datos = obtener_datos()
         usuarios = list(datos.keys())
         claves = list(datos.values())
+        login_valido = False
         if usuario in usuarios:
             pos = usuarios.index(usuario)
             if clave == claves[pos]:
                 levantar_validacion("Usuario y Clave Correctos")
-            else:
-                levantar_validacion("Algunos de los datos ingresados es Incorrecto")
-        else:
+                login_valido = True
+        if not login_valido:
             levantar_validacion("Algunos de los datos ingresados es Incorrecto")
 
 
-#ventana    
+#ventana
 ventana=Tk()
 ventana.title("Login Internautas")
 ventana.geometry("300x130")
