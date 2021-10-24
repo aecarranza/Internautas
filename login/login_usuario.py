@@ -67,8 +67,6 @@ texto_clave=Entry(miframe)
 texto_clave.place(x=X_ENTRYBOX,y=Y_CLAVE)
 texto_clave.config(show="*")
 
-validacion = Label(miframe)
-
 #boton
 boton=Button(ventana, text="Ingresar", command=validar_datos)
 boton.pack()
